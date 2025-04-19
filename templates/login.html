@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <form onsubmit="return cat()">
+        <p>Username</p>
+        <input type="text" placeholder="username" name="username" id="username" required><br>
+        <p>Password</p>
+        <input type="password" placeholder="password" name="password" id="password" required><br>
+        <input type="submit" value="Login">
+    </form>
+
+    <script>
+        function cat() {
+            const UN = document.getElementById("username").value;
+            const PW = document.getElementById("password").value;
+            window.location.href = "/get?u=" + encodeURIComponent(UN) + "&p=" + encodeURIComponent(PW);
+            return false;
+        }
+    </script>
+</body>
+</html>
